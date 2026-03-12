@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="login-card">
+
+<div class="login-left">
+<div class="home-right">
+        <img src="{{ url_for('static', filename='Image11-removebg-preview.png') }}" class="main-image" alt="University Logo">
+    </div>
+<h2>نظام إدارة الشؤون الجامعية</h2>
+
+<p>
+منصة شاملة لإدارة جميع الشؤون الأكاديمية والإدارية
+</p>
+
+<div class="features">
+
+<div class="feature">إدارة الطلاب</div>
+
+<div class="feature">إدارة المقررات</div>
+
+<div class="feature">التقارير</div>
+
+</div>
+
+</div>
+
+
+<div class="login-right">
+
+<h2>تسجيل الدخول</h2>
+
+<form action="{{ url_for('auth.login') }}" method="post">
+
+<label>البريد الإلكتروني</label>
+<input type="email" name="email" required>
+
+<label>كلمة المرور</label>
+<input type="password" name="password" required>
+
+
+<button type="submit">دخول المستخدم </button>
+
+</form>
+
+<div style="margin-top:10px">
+<a href="{{ url_for('auth.forgot_password') }}">
+نسيت كلمة المرور؟
+</a>
+</div>
+
+<p>
+ليس لديك حساب؟
+<a href="{{ url_for('auth.select_account_type') }}">إنشاء حساب جديد</a>
+</p>
+
+</div>
+
+</div>
+<div class="links" style="text-align: center; margin-top: 20px;">
+    <a href="{{ previous_page }}">← العودة إلى الصفحة السابقة</a>
+</div>
+<div class="back-home">
+        <a href="/">🏠العودة إلى الصفحة الرئيسية </a>
+    </div>
+{% endblock %}

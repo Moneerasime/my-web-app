@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="register-card">
+
+  <h2>إنشاء حساب عضو هيئة تدريس</h2>
+  <p>أدخل بياناتك الشخصية والأكاديمية</p>
+
+  <form action="/create_faculty" method="post">
+
+    <!-- البيانات الشخصية -->
+    <div class="form-section">
+      <h3>البيانات الشخصية</h3>
+      <div class="row">
+        <input type="text" name="first_name" placeholder="الاسم الأول" required>
+        <input type="text" name="last_name" placeholder="الاسم الأخير" required>
+      </div>
+      <div class="row">
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <input type="text" name="phone" placeholder="رقم الهاتف" required>
+      </div>
+      <select name="role"> 
+    <option value="طالب">طالب</option> 
+    <option value="دكتور">دكتور</option>
+     <option value="إدارة">إدارة</option> 
+    </select>
+    </div>
+
+    <!-- البيانات الأكاديمية -->
+    <div class="form-section">
+      <h3>البيانات الأكاديمية</h3>
+      <input type="text" name="faculty_id" placeholder="رقم الموظف" required>
+      <input type="text" name="department" placeholder="القسم" required>
+      <input type="text" name="college" placeholder="الكلية" required>
+    </div>
+
+    <!-- بيانات الأمان -->
+    <div class="form-section">
+      <h3>بيانات الأمان</h3>
+      <input type="password" name="password" placeholder="كلمة المرور" required>
+      <input type="password" name="confirm_password" placeholder="تأكيد كلمة المرور" required>
+      <label>
+        <input type="checkbox" name="terms" required> أوافق على الشروط والأحكام و سياسة الخصوصية
+      </label>
+    </div>
+
+    <button type="submit">إنشاء الحساب</button>
+  </form>
+<div class="links" class="next-btn"  style="text-align: center; margin-top: 20px;">
+    <a href="{{ previous_page }}">← العودة إلى الصفحة السابقة</a>
+</div>
+  
+</div>
+{% endblock %}

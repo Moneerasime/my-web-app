@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="register-card">
+    <h2>إنشاء حساب جديد</h2>
+<form action="{{ url_for('auth.create_user') }}" method="post">
+            <div class="row">
+            <input type="text" name="name" placeholder="الاسم الكامل" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        </div>
+        <div class="row">
+            <input type="password" name="password" placeholder="كلمة المرور" required>
+            <input type="text" name="student_id" placeholder="الرقم الجامعي / الموظف">
+        </div>
+        <div class="row">
+            <input type="text" name="department" placeholder="القسم">
+            <input type="text" name="phone" placeholder="رقم الهاتف">
+        </div>
+        <select name="role">
+            <option value="طالب">طالب</option>
+            <option value="دكتور">دكتور</option>
+            <option value="إدارة">إدارة</option>
+        </select>
+        <button type="submit">إنشاء الحساب</button>
+    </form>
+    
+</div>
+<div class="links" style="text-align: center; margin-top: 20px;">
+    <a href="{{ previous_page }}">← العودة إلى الصفحة السابقة</a>
+</div>
+<div class="back-home">
+        <a href="/">🏠العودة إلى الصفحة الرئيسية </a>
+    </div>
+{% endblock %}

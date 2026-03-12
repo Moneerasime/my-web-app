@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="account-type-card">
+    <h2>إنشاء حساب جديد</h2>
+    <p>اختر نوع الحساب الذي تريد إنشاؤه</p>
+
+    <div class="account-options">
+        <div class="account-option" onclick="goToPage('student')">
+            <h3>حساب طالب</h3>
+            <p>للطلبة الراغبين في الوصول إلى المقررات والجدول الدراسي.</p>
+        </div>
+
+        <div class="account-option" onclick="goToPage('faculty')">
+            <h3>حساب عضو هيئة تدريس</h3>
+            <p>لأعضاء هيئة التدريس لإدارة المقررات والطلاب.</p>
+        </div>
+    </div>
+
+    
+<div class="links" style="text-align: center; margin-top: 20px;">
+    <a href="{{ previous_page }}">← العودة إلى الصفحة السابقة</a>
+</div>
+    <div class="back-home">
+        <a href="/">🏠العودة إلى الصفحة الرئيسية </a>
+    </div>
+</div>
+
+<script>
+    // دالة تحويل المستخدم حسب اختياره
+    function goToPage(role) {
+        if(role === 'student'){
+            window.location.href = "/register_student";
+        } else if(role === 'faculty'){
+            window.location.href = "/register_faculty";
+        }
+    }
+</script>
+{% endblock %}

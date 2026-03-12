@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>لوحة الإدارة</h2>
+<p>مرحباً، {{ session.name }}</p>
+<div class="cards">
+    <a href="/admin/users" class="card">إدارة المستخدمين</a>
+    <a href="/admin/reports" class="card">التقارير</a>
+</div>
+<div class="back-home">
+        <a href="/">🏠العودة إلى الصفحة الرئيسية </a>
+    </div>
+{% endblock %}
