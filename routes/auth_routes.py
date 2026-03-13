@@ -5,8 +5,8 @@ auth_bp = Blueprint("auth", __name__)
 
 # الصفحة الرئيسية
 @auth_bp.route("/")
-def home():
-    return render_template("home.html")
+def main():
+    return render_template("main.html")
 
 
 # صفحة تسجيل الدخول

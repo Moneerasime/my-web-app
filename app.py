@@ -16,7 +16,6 @@ app.register_blueprint(student_bp)
 app.register_blueprint(faculty_bp)
 app.register_blueprint(admin_bp)
 
-
 with app.app_context():
     db.create_all()  # ينشئ الجداول إذا لم تكن موجودة
 

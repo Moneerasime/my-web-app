@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الجامعة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="home-right">
+        <img src="{{ url_for('static', filename='Image11-removebg-preview.png') }}" class="main-image" alt="University Logo">
+    </div>
+        <nav>
+            <a href="#" class="active">الصفحةالرئيسية</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+        <a href="{{ url_for('auth.login') }}" class="login-btn">تسجيل الدخول</a>
+    </header>
+     <section class="hero">
+        <div class="hero-text">
+            <h1>نظام إدارة الشؤون الجامعية</h1>
+            <p>
+                يوفر نظام إدارة الجامعة حلاً شاملاً لإدارة الطلاب، الدورات، وأعضاء هيئة التدريس بسهولة وكفاءة.
+            </p>
+            <ul>
+                <li>إدارة الطلاب</li>
+                <li>إدارة الدورات</li>
+                <li>إدارة أعضاء هيئة التدريس</li>
+                <li>التقارير والتحليلات</li>
+                <li>واجهة مستخدم سهلة الاستخدام</li>
+            </ul>
+            <div class="btn-group">
+                <a href="#" class="btn-primary">ابدأ الآن</a>
+                <a href="#" class="btn-secondary">شاهد الفيديو</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="https://i.ibb.co/xCNR7Dp/hero-illustration.png" alt="Illustration">
+        </div>
+    </section>
+</body>
+
+{% endblock %}
